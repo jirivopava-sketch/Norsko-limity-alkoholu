@@ -372,9 +372,16 @@ function recalc(){
   const n=persons.length;
   let lS=0,lW=0,lB=0;
   persons.forEach(p=>{const ag=getAgeGroup(p.age);if(ag.spirits)lS+=1;if(ag.wine)lW+=1.5;if(ag.beer)lB+=2;});
+  // Celkové množství za skupinu
   const spirits=mode==='person'?sIn*n:sIn;
   const wine=mode==='person'?wIn*n:wIn;
   const beer=mode==='person'?bIn*n:bIn;
+  // Množství na osobu pro vizualizaci (vždy zobraz co zadal uživatel / na osobu)
+  const spiritsPerP=mode==='person'?sIn:sIn/n;
+  const winePerP=mode==='person'?wIn:wIn/n;
+  const beerPerP=mode==='person'?bIn:bIn/n;
+  // Limity jsou vždy na osobu
+  const limSperP=lS/n||0, limWperP=lW/n||0, limBperP=lB/n||0;
   const unusedSpirits=Math.max(0,lS-spirits);
   const unusedWine=Math.max(0,lW-wine);
   const bonusWine=unusedSpirits*1.5;
@@ -386,9 +393,18 @@ function recalc(){
   if(unusedSpirits>0&&lS>0)lines.push(`🥃 Nevyužito <strong>${unusedSpirits.toFixed(2)} l lihovin</strong> → bonus <strong>+${bonusWine.toFixed(2)} l vína</strong> nebo <strong>+${(unusedSpirits*1.5).toFixed(2)} l piva</strong>`);
   if(unusedWine>0&&lW>0)lines.push(`🍷 Nevyužito <strong>${unusedWine.toFixed(2)} l vína</strong> → bonus <strong>+${(unusedWine).toFixed(2)} l piva</strong>`);
   if(lines.length){swapEl.style.display='block';swapEl.innerHTML='Aktivní přepočty:<br>'+lines.join('<br>');}else{swapEl.style.display='none';}
-  renderBottles('viz-spirits','spirits',spirits,lS,0,'#534AB7',spiritUnitSize,'🥃 Lihoviny');
-  renderBottles('viz-wine','wine',wine,lW,bonusWine,'#993556',wineUnitSize,'🍷 Víno');
-  renderBottles('viz-beer','beer',beer,lB,bonusBeer,'#854F0B',beerUnitSize,'🍺 Pivo');
+  // Vizualizace: při "na osobu" ukaž hodnoty na 1 osobu, při "za skupinu" ukaž skupinu
+  if(mode==='person'){
+    const bonusWineP=Math.max(0,limSperP-spiritsPerP)*1.5;
+    const bonusBeerP=Math.max(0,limSperP-spiritsPerP)*1.5+Math.max(0,limWperP-winePerP)*1.0;
+    renderBottles('viz-spirits','spirits',spiritsPerP,limSperP,0,'#534AB7',spiritUnitSize,'🥃 Lihoviny (na osobu)');
+    renderBottles('viz-wine','wine',winePerP,limWperP,bonusWineP,'#993556',wineUnitSize,'🍷 Víno (na osobu)');
+    renderBottles('viz-beer','beer',beerPerP,limBperP,bonusBeerP,'#854F0B',beerUnitSize,'🍺 Pivo (na osobu)');
+  } else {
+    renderBottles('viz-spirits','spirits',spirits,lS,0,'#534AB7',spiritUnitSize,'🥃 Lihoviny');
+    renderBottles('viz-wine','wine',wine,lW,bonusWine,'#993556',wineUnitSize,'🍷 Víno');
+    renderBottles('viz-beer','beer',beer,lB,bonusBeer,'#854F0B',beerUnitSize,'🍺 Pivo');
+  }
   const ageW=persons.filter(p=>p.age>0&&p.age<20).map(p=>p.age<18?`<strong>${p.name}</strong> (${p.age} let) — nesmí nic.`:`<strong>${p.name}</strong> (${p.age} let) — jen pivo a víno.`);
   const over=[];
   if(spirits>lS&&lS>0)over.push(`lihoviny o ${(spirits-lS).toFixed(1)} l`);
