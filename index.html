@@ -112,8 +112,8 @@ a { color: var(--blue); }
         <input type="number" id="q-spirits" min="0" step="0.1" value="0" oninput="recalc()">
         <div style="font-size:11px;color:var(--text2);margin-top:2px" id="spirits-hint">0,7 l = 1 lahev</div>
         <div style="display:flex;gap:4px;margin-top:5px;flex-wrap:wrap;">
-          <button class="size-pill active-s" onclick="setSpiritSize(0.70,this)">0,7 l</button>
-          <button class="size-pill" onclick="setSpiritSize(0.50,this)">0,5 l</button>
+          <button class="size-pill active-s" onclick="setSpiritSize(0.50,this)">0,5 l</button>
+          <button class="size-pill" onclick="setSpiritSize(0.70,this)">0,7 l</button>
           <button class="size-pill" onclick="setSpiritSize(1.00,this)">1,0 l</button>
           <button class="size-pill" onclick="setSpiritSize('mixed-s',this)">Mix</button>
         </div>
@@ -257,7 +257,7 @@ a { color: var(--blue); }
 
 <script>
 let persons=[{name:'Osoba 1',age:30}],mode='group';
-let spiritUnitSize=0.70,wineUnitSize=0.75,beerUnitSize=0.33;
+let spiritUnitSize=0.50,wineUnitSize=0.75,beerUnitSize=0.33;
 let spiritMix=false,wineMix=false,beerMix=false;
 
 function getAgeGroup(a){return{spirits:a>=20,wine:a>=18,beer:a>=18};}
