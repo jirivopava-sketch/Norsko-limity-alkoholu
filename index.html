@@ -10,8 +10,7 @@
   --bg: #ffffff; --bg2: #f5f5f3; --bg3: #eeede9;
   --text: #1a1a1a; --text2: #666660; --text3: #999990;
   --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.22);
-  --radius: 8px; --radius-lg: 12px;
-  --blue: #185FA5;
+  --radius: 8px; --radius-lg: 12px; --blue: #185FA5;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -34,7 +33,7 @@ h2 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
 .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 @media(max-width:600px){ .grid3 { grid-template-columns: 1fr; } }
 .form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-label { font-size: 12px; color: var(--text2); }
+.form-label { font-size: 12px; font-weight: 500; }
 input[type=number] { padding: 7px 10px; border-radius: var(--radius); border: 0.5px solid var(--border); background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit; width: 100%; transition: border-color 0.15s; }
 input[type=number]:focus { outline: none; border-color: var(--blue); }
 input[type=text] { border: none; background: transparent; font-weight: 500; font-size: 13px; padding: 0; width: 100px; color: var(--text); font-family: inherit; }
@@ -48,47 +47,45 @@ input[type=text] { border: none; background: transparent; font-weight: 500; font
 .badge-ok { background: #EAF3DE; color: #3B6D11; }
 .badge-no { background: #FCEBEB; color: #A32D2D; }
 .badge-warn { background: #FAEEDA; color: #854F0B; }
-.viz-section { margin-bottom: 16px; }
-.viz-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+.size-pill { padding: 3px 9px; border-radius: 99px; border: 0.5px solid var(--border); font-size: 11px; cursor: pointer; background: transparent; color: var(--text2); transition: all 0.12s; }
+.size-pill:hover { background: var(--bg2); }
+.active-s { background: #534AB7; color: #fff; border-color: #534AB7; }
+.active-w { background: #993556; color: #fff; border-color: #993556; }
+.active-b { background: #854F0B; color: #fff; border-color: #854F0B; }
+.viz-section { margin-bottom: 14px; }
+.viz-title { font-size: 13px; font-weight: 500; margin-bottom: 5px; }
 .viz-sub { font-size: 12px; color: var(--text2); font-weight: 400; }
-.bottles-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-end; min-height: 64px; padding: 8px; background: var(--bg2); border-radius: var(--radius); }
+.bottles-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: flex-end; min-height: 60px; padding: 8px; background: var(--bg2); border-radius: var(--radius); }
 .bottle-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .bottle-label { font-size: 10px; color: var(--text2); }
-.limit-line { width: 2px; height: 56px; background: #A32D2D; border-radius: 1px; align-self: center; position: relative; flex-shrink: 0; }
-.limit-tag { position: absolute; top: -16px; left: 5px; font-size: 10px; color: #A32D2D; white-space: nowrap; font-weight: 500; }
-.ok-note  { font-size: 12px; color: #3B6D11; padding: 9px 12px; background: #EAF3DE; border-radius: var(--radius); border-left: 3px solid #639922; line-height: 1.6; margin-top: 10px; }
-.err-note { font-size: 12px; color: #A32D2D; padding: 9px 12px; background: #FCEBEB; border-radius: var(--radius); border-left: 3px solid #A32D2D; line-height: 1.6; margin-top: 10px; }
-.warn-note{ font-size: 12px; color: #854F0B; padding: 9px 12px; background: #FAEEDA; border-radius: var(--radius); border-left: 3px solid #BA7517; line-height: 1.6; margin-top: 8px; }
-.info-note{ font-size: 12px; color: var(--text2); padding: 9px 12px; background: var(--bg2); border-radius: var(--radius); border-left: 3px solid var(--blue); line-height: 1.6; margin-bottom: 10px; }
+.limit-line { width: 2px; height: 54px; background: #A32D2D; border-radius: 1px; align-self: center; position: relative; flex-shrink: 0; }
+.limit-tag { position: absolute; top: -15px; left: 5px; font-size: 10px; color: #A32D2D; white-space: nowrap; font-weight: 500; }
+.bonus-line { width: 2px; height: 54px; background: #3B6D11; border-radius: 1px; align-self: center; position: relative; flex-shrink: 0; }
+.bonus-tag { position: absolute; top: -15px; left: 5px; font-size: 10px; color: #3B6D11; white-space: nowrap; font-weight: 500; }
+.ok-note   { font-size: 12px; color: #3B6D11; padding: 9px 12px; background: #EAF3DE; border-radius: var(--radius); border-left: 3px solid #639922; line-height: 1.6; margin-top: 10px; }
+.err-note  { font-size: 12px; color: #A32D2D; padding: 9px 12px; background: #FCEBEB; border-radius: var(--radius); border-left: 3px solid #A32D2D; line-height: 1.6; margin-top: 10px; }
+.warn-note { font-size: 12px; color: #854F0B; padding: 9px 12px; background: #FAEEDA; border-radius: var(--radius); border-left: 3px solid #BA7517; line-height: 1.6; margin-top: 8px; }
+.info-note { font-size: 12px; color: var(--text2); padding: 9px 12px; background: var(--bg2); border-radius: var(--radius); border-left: 3px solid var(--blue); line-height: 1.6; margin-bottom: 10px; }
 .mode-row { display: flex; gap: 6px; align-items: center; margin-bottom: 10px; font-size: 12px; color: var(--text2); flex-wrap: wrap; }
 .mode-btn { padding: 4px 12px; border-radius: var(--radius); border: 0.5px solid var(--border); font-size: 12px; cursor: pointer; background: transparent; color: var(--text2); }
 .mode-btn.active { background: var(--bg2); color: var(--text); border-color: var(--border2); font-weight: 500; }
-.size-pill { padding: 3px 10px; border-radius: 99px; border: 0.5px solid var(--border); font-size: 12px; cursor: pointer; background: transparent; color: var(--text2); }
-.size-pill.active { background: #854F0B; color: #fff; border-color: #854F0B; }
+.mix-row-inner { display: none; margin-top: 8px; padding: 8px 10px; background: var(--bg2); border-radius: var(--radius); font-size: 12px; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th { text-align: left; padding: 8px 10px; font-size: 12px; font-weight: 500; color: var(--text2); border-bottom: 0.5px solid var(--border); }
 td { padding: 8px 10px; border-bottom: 0.5px solid var(--border); color: var(--text); vertical-align: middle; }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: var(--bg2); }
-.limit-chip { display: inline-block; font-size: 13px; font-weight: 500; padding: 3px 10px; border-radius: var(--radius); background: var(--bg2); }
-.swap-box { background: var(--bg2); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 10px; }
-.swap-eq { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; }
-.swap-arrow { font-size: 18px; color: var(--text2); }
-.swap-from { padding: 4px 10px; border-radius: var(--radius); background: #534AB722; color: #534AB7; font-weight: 500; }
-.swap-to-wine { background: #99355622; color: #993556; font-weight: 500; padding: 4px 10px; border-radius: var(--radius); }
-.swap-to-beer { background: #854F0B22; color: #854F0B; font-weight: 500; padding: 4px 10px; border-radius: var(--radius); }
-.swap-note { font-size: 12px; color: var(--text2); margin-top: 6px; }
+.limit-chip { display: inline-block; font-size: 12px; font-weight: 500; padding: 2px 8px; border-radius: var(--radius); background: var(--bg2); }
+.chip-s { background: #534AB722; color: #534AB7; display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 12px; }
+.chip-w { background: #99355622; color: #993556; display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 12px; }
+.chip-b { background: #854F0B22; color: #854F0B; display: inline-block; padding: 2px 7px; border-radius: 99px; font-size: 12px; }
 a { color: var(--blue); }
-.chip-s { background: #534AB722; color: #534AB7; display:inline-block; padding:2px 7px; border-radius:99px; font-size:12px; }
-.chip-w { background: #99355622; color: #993556; display:inline-block; padding:2px 7px; border-radius:99px; font-size:12px; }
-.chip-b { background: #854F0B22; color: #854F0B; display:inline-block; padding:2px 7px; border-radius:99px; font-size:12px; }
-.source-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 </style>
 </head>
 <body>
 <div class="app">
 <h2>Alkohol do Norska ✈</h2>
-<p class="sub">Kalkulačka celních limitů · vizualizace · toll.no 2024</p>
+<p class="sub">Kalkulačka celních limitů · automatický přepočet kategorií · toll.no 2024</p>
 
 <div class="tabs">
   <button class="tab active" onclick="sw('kalk',this)">Kalkulačka</button>
@@ -102,6 +99,7 @@ a { color: var(--blue); }
     <div id="persons-list"></div>
     <button class="btn btn-add" onclick="addPerson()" style="margin-top:10px;">+ Přidat osobu</button>
   </div>
+
   <div class="card">
     <div class="card-title">Co vezete?</div>
     <div class="mode-row">Zadávám:
@@ -110,37 +108,69 @@ a { color: var(--blue); }
     </div>
     <div class="grid3">
       <div class="form-group">
-        <div class="form-label">🥃 Lihoviny 22–60% (l)</div>
+        <div class="form-label" style="color:#534AB7">🥃 Lihoviny 22–60% (l)</div>
         <input type="number" id="q-spirits" min="0" step="0.1" value="0" oninput="recalc()">
-        <div style="font-size:11px;color:var(--text2);margin-top:2px">0,7 l = 1 lahev</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px" id="spirits-hint">0,7 l = 1 lahev</div>
+        <div style="display:flex;gap:4px;margin-top:5px;flex-wrap:wrap;">
+          <button class="size-pill active-s" onclick="setSpiritSize(0.70,this)">0,7 l</button>
+          <button class="size-pill" onclick="setSpiritSize(0.50,this)">0,5 l</button>
+          <button class="size-pill" onclick="setSpiritSize(1.00,this)">1,0 l</button>
+          <button class="size-pill" onclick="setSpiritSize('mixed-s',this)">Mix</button>
+        </div>
+        <div class="mix-row-inner" id="mix-spirits">
+          <div style="margin-bottom:5px;color:var(--text2)">Počet lahví:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="ms-05" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixS()"> × 0,5 l</label>
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="ms-07" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixS()"> × 0,7 l</label>
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="ms-10" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixS()"> × 1,0 l</label>
+            <span id="ms-total" style="color:var(--text2)">= 0 l</span>
+          </div>
+        </div>
       </div>
       <div class="form-group">
-        <div class="form-label">🍷 Víno do 22% (l)</div>
+        <div class="form-label" style="color:#993556">🍷 Víno do 22% (l)</div>
         <input type="number" id="q-wine" min="0" step="0.1" value="0" oninput="recalc()">
-        <div style="font-size:11px;color:var(--text2);margin-top:2px">0,75 l = 1 lahev</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px" id="wine-hint">0,75 l = 1 lahev</div>
+        <div style="display:flex;gap:4px;margin-top:5px;flex-wrap:wrap;">
+          <button class="size-pill active-w" onclick="setWineSize(0.75,this)">0,75 l</button>
+          <button class="size-pill" onclick="setWineSize(0.375,this)">0,375 l</button>
+          <button class="size-pill" onclick="setWineSize(1.50,this)">1,5 l</button>
+          <button class="size-pill" onclick="setWineSize('mixed-w',this)">Mix</button>
+        </div>
+        <div class="mix-row-inner" id="mix-wine">
+          <div style="margin-bottom:5px;color:var(--text2)">Počet lahví:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="mw-375" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixW()"> × 0,375</label>
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="mw-75" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixW()"> × 0,75</label>
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="mw-150" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixW()"> × 1,5</label>
+            <span id="mw-total" style="color:var(--text2)">= 0 l</span>
+          </div>
+        </div>
       </div>
       <div class="form-group">
-        <div class="form-label">🍺 Pivo do 4,7% (l)</div>
+        <div class="form-label" style="color:#854F0B">🍺 Pivo do 4,7% (l)</div>
         <input type="number" id="q-beer" min="0" step="0.1" value="0" oninput="recalc()">
         <div style="font-size:11px;color:var(--text2);margin-top:2px" id="beer-hint">0,33 l = 1 plechovka</div>
-        <div style="display:flex;gap:5px;margin-top:5px;flex-wrap:wrap;">
-          <button class="size-pill active" onclick="setBeerSize(0.33,this)">0,33 l</button>
+        <div style="display:flex;gap:4px;margin-top:5px;flex-wrap:wrap;">
+          <button class="size-pill active-b" onclick="setBeerSize(0.33,this)">0,33 l</button>
           <button class="size-pill" onclick="setBeerSize(0.50,this)">0,5 l</button>
-          <button class="size-pill" onclick="setBeerSize('mixed',this)">Mix</button>
+          <button class="size-pill" onclick="setBeerSize('mixed-b',this)">Mix</button>
+        </div>
+        <div class="mix-row-inner" id="mix-beer">
+          <div style="margin-bottom:5px;color:var(--text2)">Počet plechovek:</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="mb-033" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixB()"> × 0,33</label>
+            <label style="display:flex;align-items:center;gap:4px;"><input type="number" id="mb-05" min="0" step="1" value="0" style="width:52px;" oninput="recalcMixB()"> × 0,5</label>
+            <span id="mb-total" style="color:var(--text2)">= 0 l</span>
+          </div>
         </div>
       </div>
     </div>
-    <div id="mix-row" style="display:none;margin-top:10px;padding:10px 12px;background:var(--bg2);border-radius:var(--radius);font-size:12px;">
-      <div style="margin-bottom:6px;color:var(--text2)">Počet plechovek:</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <label style="display:flex;align-items:center;gap:5px;"><input type="number" id="mix-033" min="0" step="1" value="0" style="width:60px;" oninput="recalcMix()"> × 0,33 l</label>
-        <label style="display:flex;align-items:center;gap:5px;"><input type="number" id="mix-05" min="0" step="1" value="0" style="width:60px;" oninput="recalcMix()"> × 0,5 l</label>
-        <span style="color:var(--text2)" id="mix-total">= 0 l</span>
-      </div>
-    </div>
   </div>
+
   <div class="card">
-    <div class="card-title">Vizualizace — co se vejde do limitu</div>
+    <div class="card-title">Vizualizace limitů s přepočtem</div>
+    <div id="swap-info" class="info-note" style="display:none;"></div>
     <div id="viz-spirits" class="viz-section"></div>
     <div id="viz-wine" class="viz-section"></div>
     <div id="viz-beer" class="viz-section"></div>
@@ -154,18 +184,18 @@ a { color: var(--blue); }
     <div class="card-title">Celní limity na osobu — duty-free kvóta</div>
     <div class="info-note">Limity platí pro pobyt v zahraničí delší než <strong>24 hodin</strong>. Alkohol nad 60 % ABV je <strong>zakázáno dovézt</strong> v jakémkoliv množství.</div>
     <table>
-      <thead><tr><th>Kategorie</th><th>Duty-free limit</th><th>Věkový limit</th><th>Lahví / kusů</th></tr></thead>
+      <thead><tr><th>Kategorie</th><th>Duty-free limit</th><th>Věkový limit</th><th>Příklady balení</th></tr></thead>
       <tbody>
-        <tr><td>🥃 Lihoviny 22–60 % ABV</td><td><span class="limit-chip">1 litr</span></td><td><span class="badge badge-warn">20+ let</span></td><td>1× 1 l nebo 1,4× 0,7 l</td></tr>
-        <tr><td>🍷 Víno / silné pivo do 22 % ABV</td><td><span class="limit-chip">1,5 litru</span></td><td><span class="badge badge-warn">18+ let</span></td><td>2× 0,75 l lahve vína</td></tr>
-        <tr><td>🍺 Pivo / cider do 4,7 % ABV</td><td><span class="limit-chip">2 litry</span></td><td><span class="badge badge-warn">18+ let</span></td><td>6× 0,33 l nebo 4× 0,5 l</td></tr>
+        <tr><td>🥃 Lihoviny 22–60 % ABV</td><td><span class="limit-chip">1 litr</span></td><td><span class="badge badge-warn">20+ let</span></td><td>1× 1 l, nebo 2× 0,5 l, nebo 1,4× 0,7 l</td></tr>
+        <tr><td>🍷 Víno / silné pivo do 22 % ABV</td><td><span class="limit-chip">1,5 litru</span></td><td><span class="badge badge-warn">18+ let</span></td><td>2× 0,75 l, nebo 4× 0,375 l</td></tr>
+        <tr><td>🍺 Pivo / cider do 4,7 % ABV</td><td><span class="limit-chip">2 litry</span></td><td><span class="badge badge-warn">18+ let</span></td><td>6× 0,33 l, nebo 4× 0,5 l</td></tr>
         <tr><td>🚫 Alkohol nad 60 % ABV</td><td colspan="3" style="color:#A32D2D;font-weight:500">Zakázáno dovézt — žádné množství</td></tr>
       </tbody>
     </table>
     <div style="margin-top:12px;padding-top:10px;border-top:0.5px solid var(--border);">
       <div style="font-size:12px;font-weight:600;margin-bottom:6px;">S celním přiznáním a zaplacením cla — maximum:</div>
       <table>
-        <thead><tr><th>Kategorie</th><th>Max. celkem (duty-free + clo)</th></tr></thead>
+        <thead><tr><th>Kategorie</th><th>Max. celkem</th></tr></thead>
         <tbody>
           <tr><td>🥃 Lihoviny</td><td>5 litrů (1 duty-free + 4 l s clem)</td></tr>
           <tr><td>🍷 Víno / silné pivo</td><td>28,5 litru (1,5 + 27 l s clem)</td></tr>
@@ -174,79 +204,72 @@ a { color: var(--blue); }
       </table>
     </div>
   </div>
+
   <div class="card">
-    <div class="card-title">Přepočet kategorií — výměna kvóty</div>
-    <div class="info-note">Nevyužitou kvótu <strong>lihovin</strong> lze vyměnit za víno nebo pivo. Nevyužitou kvótu <strong>vína</strong> lze vyměnit za pivo. Opačné směry <strong>nejsou povoleny</strong>.</div>
-    <div class="swap-box">
-      <div style="font-size:12px;font-weight:500;margin-bottom:8px;color:var(--text2)">1 l lihovin → víno nebo pivo</div>
-      <div class="swap-eq">
-        <span class="swap-from">1 l lihovin</span>
-        <span class="swap-arrow">→</span>
-        <span class="swap-to-wine">+1,5 l vína</span>
-        <span style="font-size:12px;color:var(--text2)">nebo</span>
-        <span class="swap-to-beer">+1,5 l piva</span>
-      </div>
-      <div class="swap-note">Celý limit lihovin (1 l) vyměníš za 1,5 l vína nebo 1,5 l piva navíc → celkem 3 l vína nebo 3,5 l piva.</div>
-    </div>
-    <div class="swap-box">
-      <div style="font-size:12px;font-weight:500;margin-bottom:8px;color:var(--text2)">1,5 l vína → pivo</div>
-      <div class="swap-eq">
-        <span class="swap-to-wine">1,5 l vína</span>
-        <span class="swap-arrow">→</span>
-        <span class="swap-to-beer">+1,5 l piva</span>
-      </div>
-      <div class="swap-note">Celý limit vína vyměníš za 1,5 l piva navíc → celkem 3,5 l piva.</div>
-    </div>
-    <div style="padding:10px 12px;background:#FCEBEB;border-radius:var(--radius);font-size:12px;color:#A32D2D;border-left:3px solid #A32D2D;">
-      ✗ <strong>Nelze:</strong> Pivo → víno &nbsp;·&nbsp; Víno → lihoviny &nbsp;·&nbsp; Pivo → lihoviny
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Maximální kombinace na 1 osobu (20+ let)</div>
+    <div class="card-title">Pravidla přepočtu mezi kategoriemi</div>
+    <div class="info-note">Nevyužitou kvótu lze přesunout jen <strong>dolů</strong> — lihoviny → víno/pivo, víno → pivo. Nikdy opačně.</div>
     <table>
-      <thead><tr><th>Scénář</th><th>🥃 Lihoviny</th><th>🍷 Víno</th><th>🍺 Pivo (0,33 l)</th><th>🍺 Pivo (0,5 l)</th></tr></thead>
+      <thead><tr><th>Nevyužitá kvóta</th><th>Lze přidat</th><th>Přepočet</th></tr></thead>
       <tbody>
-        <tr><td>Standardní kvóta</td><td><span class="chip-s">1 l</span></td><td><span class="chip-w">1,5 l</span></td><td><span class="chip-b">6×</span></td><td><span class="chip-b">4×</span></td></tr>
-        <tr><td>Bez lihovin → max víno</td><td>0</td><td>3 l (4 lahve)</td><td>6×</td><td>4×</td></tr>
-        <tr><td>Bez lihovin → max pivo</td><td>0</td><td>1,5 l</td><td>11×</td><td>7×</td></tr>
-        <tr><td>Bez lihovin, bez vína → max pivo</td><td>0</td><td>0</td><td>15× (5 l)</td><td>10× (5 l)</td></tr>
-        <tr><td>Jen víno</td><td>0</td><td>3 l (4 lahve)</td><td>0</td><td>0</td></tr>
-        <tr><td>Jen lihoviny</td><td>1 l</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td><span class="chip-s">1 l lihovin</span></td><td><span class="chip-w">+1,5 l vína</span></td><td>1 l lihovin nevyužito = 1,5 l vína navíc → celkem 3 l vína</td></tr>
+        <tr><td><span class="chip-s">1 l lihovin</span></td><td><span class="chip-b">+1,5 l piva</span></td><td>1 l lihovin nevyužito = 1,5 l piva navíc → celkem 3,5 l piva</td></tr>
+        <tr><td><span class="chip-w">1,5 l vína</span></td><td><span class="chip-b">+1,5 l piva</span></td><td>1,5 l vína nevyužito = 1,5 l piva navíc → celkem 3,5 l piva</td></tr>
+        <tr><td colspan="3" style="color:#A32D2D;font-size:12px;">✗ Nelze: pivo → víno, víno → lihoviny, pivo → lihoviny</td></tr>
       </tbody>
     </table>
+    <div style="margin-top:12px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">Maximální kombinace na 1 osobu (20+):</div>
+      <table>
+        <thead><tr><th>Scénář</th><th>🥃</th><th>🍷</th><th>🍺 (0,33 l)</th><th>🍺 (0,5 l)</th></tr></thead>
+        <tbody>
+          <tr><td>Standardní kvóta</td><td><span class="chip-s">1 l</span></td><td><span class="chip-w">1,5 l</span></td><td><span class="chip-b">6×</span></td><td><span class="chip-b">4×</span></td></tr>
+          <tr><td>Bez lihovin → max víno</td><td>0</td><td>3 l (4 lahve)</td><td>6×</td><td>4×</td></tr>
+          <tr><td>Bez lihovin → max pivo</td><td>0</td><td>1,5 l</td><td>11×</td><td>7×</td></tr>
+          <tr><td>Jen pivo (vše přepočteno)</td><td>0</td><td>0</td><td>15× (5 l)</td><td>10× (5 l)</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
   <div class="card">
     <div class="card-title">Věkové limity</div>
     <table>
       <thead><tr><th>Věk</th><th>Povoleno</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge badge-no">Pod 18 let</span></td><td style="color:#A32D2D">Žádný alkohol — ani pivo, víno, ani lihoviny</td></tr>
-        <tr><td><span class="badge badge-warn">18–19 let</span></td><td>Pivo (do 4,7 %) a víno (do 22 %) — <strong>ne lihoviny</strong></td></tr>
-        <tr><td><span class="badge badge-ok">20+ let</span></td><td>Vše včetně lihovin (22–60 % ABV)</td></tr>
+        <tr><td><span class="badge badge-no">Pod 18 let</span></td><td style="color:#A32D2D">Žádný alkohol</td></tr>
+        <tr><td><span class="badge badge-warn">18–19 let</span></td><td>Pivo a víno — <strong>ne lihoviny</strong></td></tr>
+        <tr><td><span class="badge badge-ok">20+ let</span></td><td>Vše včetně lihovin</td></tr>
       </tbody>
     </table>
   </div>
+
   <div class="card" style="padding:12px 16px;">
-    <div class="card-title" style="margin-bottom:8px;">Zdroje dat</div>
-    <div class="source-row"><a href="https://www.toll.no/en/goods/alcohol-and-tobacco/quotas/" target="_blank">toll.no — Alcohol quotas (EN)</a><span style="font-size:12px;color:var(--text2)">Norský celní úřad · 2024</span></div>
-    <div class="source-row" style="margin-top:6px;"><a href="https://www.toll.no/no/varer/alkohol-og-tobakk/kvoter/" target="_blank">toll.no — Alkoholvarer (NO)</a><span style="font-size:12px;color:var(--text2)">Originální norský text</span></div>
-    <div class="source-row" style="margin-top:6px;"><a href="https://www.toll.no/en/goods/alcohol-and-tobacco/age-limits/" target="_blank">toll.no — Age limits (EN)</a><span style="font-size:12px;color:var(--text2)">Věková omezení</span></div>
+    <div class="card-title" style="margin-bottom:8px;">Zdroje</div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;">
+      <a href="https://www.toll.no/en/goods/alcohol-and-tobacco/quotas/" target="_blank">toll.no — Alcohol quotas (EN)</a>
+      <a href="https://www.toll.no/no/varer/alkohol-og-tobakk/kvoter/" target="_blank">toll.no — Alkoholvarer (NO)</a>
+      <a href="https://www.toll.no/en/goods/alcohol-and-tobacco/age-limits/" target="_blank">toll.no — Age limits (EN)</a>
+    </div>
     <div style="font-size:11px;color:var(--text2);margin-top:10px;">Vždy ověř aktuální pravidla na toll.no před cestou.</div>
   </div>
 </div>
 </div>
 
 <script>
-let persons=[{name:'Osoba 1',age:30}],mode='group',beerUnitSize=0.33,beerMixMode=false;
+let persons=[{name:'Osoba 1',age:30}],mode='group';
+let spiritUnitSize=0.70,wineUnitSize=0.75,beerUnitSize=0.33;
+let spiritMix=false,wineMix=false,beerMix=false;
+
 function getAgeGroup(a){return{spirits:a>=20,wine:a>=18,beer:a>=18};}
 function sw(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.getElementById('s-'+id).classList.add('active');btn.classList.add('active');}
+
 function renderPersons(){
   document.getElementById('persons-list').innerHTML=persons.map((p,i)=>{
     const ag=getAgeGroup(p.age);
     return`<div class="person-row">
       <input type="text" value="${p.name}" onchange="persons[${i}].name=this.value" style="border:none;background:transparent;font-weight:500;font-size:13px;padding:0;width:100px;color:var(--text);">
       <span style="font-size:12px;color:var(--text2)">Věk:</span>
-      <input type="number" value="${p.age}" min="0" max="99" style="width:58px;" onchange="persons[${i}].age=parseInt(this.value)||0;renderPersons();recalc();">
+      <input type="number" value="${p.age}" min="0" max="99" style="width:56px;" onchange="persons[${i}].age=parseInt(this.value)||0;renderPersons();recalc();">
       <span class="badge ${ag.spirits?'badge-ok':'badge-no'}">${ag.spirits?'🥃✓':'🥃✗'}</span>
       <span class="badge ${ag.wine?'badge-ok':'badge-no'}">${ag.wine?'🍷✓':'🍷✗'}</span>
       <span class="badge ${ag.beer?'badge-ok':'badge-no'}">${ag.beer?'🍺✓':'🍺✗'}</span>
@@ -257,69 +280,125 @@ function renderPersons(){
 function addPerson(){persons.push({name:`Osoba ${persons.length+1}`,age:25});renderPersons();recalc();}
 function removePerson(i){persons.splice(i,1);renderPersons();recalc();}
 function setMode(m,btn){mode=m;document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');recalc();}
+
+function setSpiritSize(size,btn){
+  btn.closest('.form-group').querySelectorAll('.size-pill').forEach(b=>b.classList.remove('active-s'));
+  btn.classList.add('active-s');
+  spiritMix=size==='mixed-s';spiritUnitSize=spiritMix?0.70:size;
+  document.getElementById('mix-spirits').style.display=spiritMix?'block':'none';
+  document.getElementById('spirits-hint').textContent=spiritMix?'zadej počty níže':`${size} l = 1 lahev`;
+  if(spiritMix)recalcMixS();else recalc();
+}
+function setWineSize(size,btn){
+  btn.closest('.form-group').querySelectorAll('.size-pill').forEach(b=>b.classList.remove('active-w'));
+  btn.classList.add('active-w');
+  wineMix=size==='mixed-w';wineUnitSize=wineMix?0.75:size;
+  document.getElementById('mix-wine').style.display=wineMix?'block':'none';
+  document.getElementById('wine-hint').textContent=wineMix?'zadej počty níže':`${size} l = 1 lahev`;
+  if(wineMix)recalcMixW();else recalc();
+}
 function setBeerSize(size,btn){
-  document.querySelectorAll('.size-pill').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
-  beerMixMode=size==='mixed';beerUnitSize=beerMixMode?0.33:size;
-  document.getElementById('mix-row').style.display=beerMixMode?'block':'none';
-  document.getElementById('beer-hint').textContent=size===0.33?'0,33 l = 1 plechovka':size===0.50?'0,5 l = 1 plechovka':'zadej počty níže';
-  if(beerMixMode)recalcMix();else recalc();
+  btn.closest('.form-group').querySelectorAll('.size-pill').forEach(b=>b.classList.remove('active-b'));
+  btn.classList.add('active-b');
+  beerMix=size==='mixed-b';beerUnitSize=beerMix?0.33:size;
+  document.getElementById('mix-beer').style.display=beerMix?'block':'none';
+  document.getElementById('beer-hint').textContent=beerMix?'zadej počty níže':`${size} l = 1 plechovka`;
+  if(beerMix)recalcMixB();else recalc();
 }
-function recalcMix(){
-  const c033=parseInt(document.getElementById('mix-033').value)||0;
-  const c05=parseInt(document.getElementById('mix-05').value)||0;
-  const total=+(c033*0.33+c05*0.50).toFixed(2);
-  document.getElementById('mix-total').textContent=`= ${total} l`;
-  document.getElementById('q-beer').value=total;recalc();
+function recalcMixS(){
+  const v=+(((parseInt(document.getElementById('ms-05').value)||0)*0.5+(parseInt(document.getElementById('ms-07').value)||0)*0.7+(parseInt(document.getElementById('ms-10').value)||0)*1.0).toFixed(2));
+  document.getElementById('ms-total').textContent=`= ${v} l`;
+  document.getElementById('q-spirits').value=v;recalc();
 }
+function recalcMixW(){
+  const v=+(((parseInt(document.getElementById('mw-375').value)||0)*0.375+(parseInt(document.getElementById('mw-75').value)||0)*0.75+(parseInt(document.getElementById('mw-150').value)||0)*1.5).toFixed(2));
+  document.getElementById('mw-total').textContent=`= ${v} l`;
+  document.getElementById('q-wine').value=v;recalc();
+}
+function recalcMixB(){
+  const v=+(((parseInt(document.getElementById('mb-033').value)||0)*0.33+(parseInt(document.getElementById('mb-05').value)||0)*0.5).toFixed(2));
+  document.getElementById('mb-total').textContent=`= ${v} l`;
+  document.getElementById('q-beer').value=v;recalc();
+}
+
 function bottleSVG(type,color,unitSize){
-  const h=type==='beer'?(unitSize>=0.5?40:32):type==='spirits'?50:46;
-  const w=type==='beer'?(unitSize>=0.5?26:22):type==='spirits'?20:18;
-  if(type==='spirits')return`<svg width="${w}" height="${h}" viewBox="0 0 20 50" fill="none"><rect x="7" y="0" width="6" height="6" rx="1" fill="${color}"/><rect x="6" y="5" width="8" height="5" rx="1" fill="${color}"/><path d="M4 10 Q3 14 3 18 L3 42 Q3 47 10 47 Q17 47 17 42 L17 18 Q17 14 16 10 Z" fill="${color}"/><rect x="5" y="16" width="10" height="2" rx="1" fill="white" opacity="0.22"/><rect x="5" y="20" width="10" height="9" rx="1" fill="white" opacity="0.12"/></svg>`;
-  if(type==='wine')return`<svg width="${w}" height="${h}" viewBox="0 0 18 46" fill="none"><rect x="7" y="0" width="4" height="8" rx="1" fill="${color}"/><path d="M6 8 Q4 12 4 16 L4 38 Q4 43 9 43 Q14 43 14 38 L14 16 Q14 12 12 8 Z" fill="${color}"/><ellipse cx="9" cy="34" rx="4" ry="5" fill="white" opacity="0.1"/><rect x="5" y="18" width="8" height="1.5" rx="0.75" fill="white" opacity="0.2"/></svg>`;
-  return`<svg width="${w}" height="${h}" viewBox="0 0 26 ${h}" fill="none"><rect x="2" y="3" width="22" height="${h-8}" rx="3" fill="${color}"/><ellipse cx="13" cy="3" rx="11" ry="3" fill="${color}" opacity="0.8"/><ellipse cx="13" cy="${h-5}" rx="11" ry="3" fill="${color}" opacity="0.7"/><rect x="4" y="${h-5}" width="18" height="4" rx="2" fill="${color}" opacity="0.6"/><rect x="5" y="8" width="16" height="${Math.round((h-16)*0.5)}" rx="1" fill="white" opacity="0.13"/></svg>`;
+  const hB=unitSize>=0.5?40:32,wB=unitSize>=0.5?26:22;
+  const hS=unitSize>=1.0?54:unitSize>=0.7?48:40,wS=unitSize>=1.0?22:unitSize>=0.7?20:17;
+  const hW=unitSize>=1.5?54:unitSize>=0.75?46:38,wW=18;
+  if(type==='spirits')return`<svg width="${wS}" height="${hS}" viewBox="0 0 20 ${hS}" fill="none"><rect x="7" y="0" width="6" height="5" rx="1" fill="${color}"/><rect x="6" y="4" width="8" height="5" rx="1" fill="${color}"/><path d="M4 9 Q3 13 3 17 L3 ${hS-6} Q3 ${hS-1} 10 ${hS-1} Q17 ${hS-1} 17 ${hS-6} L17 17 Q17 13 16 9 Z" fill="${color}"/><rect x="5" y="15" width="10" height="2" rx="1" fill="white" opacity="0.2"/></svg>`;
+  if(type==='wine')return`<svg width="${wW}" height="${hW}" viewBox="0 0 18 ${hW}" fill="none"><rect x="7" y="0" width="4" height="7" rx="1" fill="${color}"/><path d="M6 7 Q4 11 4 15 L4 ${hW-6} Q4 ${hW-1} 9 ${hW-1} Q14 ${hW-1} 14 ${hW-6} L14 15 Q14 11 12 7 Z" fill="${color}"/><ellipse cx="9" cy="${hW-12}" rx="4" ry="4" fill="white" opacity="0.1"/></svg>`;
+  return`<svg width="${wB}" height="${hB}" viewBox="0 0 26 ${hB}" fill="none"><rect x="2" y="3" width="22" height="${hB-8}" rx="3" fill="${color}"/><ellipse cx="13" cy="3" rx="11" ry="3" fill="${color}" opacity="0.8"/><ellipse cx="13" cy="${hB-5}" rx="11" ry="3" fill="${color}" opacity="0.7"/><rect x="4" y="${hB-5}" width="18" height="4" rx="2" fill="${color}" opacity="0.6"/><rect x="5" y="8" width="16" height="${Math.round((hB-16)*0.45)}" rx="1" fill="white" opacity="0.13"/></svg>`;
 }
-function renderBottles(cid,type,amount,limit,color,unitSize,catLabel){
+
+function renderBottles(cid,type,amount,baseLimit,bonusLimit,color,unitSize,catLabel){
   const el=document.getElementById(cid);if(!el)return;
-  if(limit===0){el.innerHTML=`<div class="viz-title">${catLabel.split('(')[0].trim()} <span class="viz-sub" style="color:#A32D2D">— nikdo nemá povolení pro tuto kategorii</span></div>`;return;}
-  const totalSlots=Math.ceil(limit/unitSize),filled=amount/unitSize,overLimit=amount>limit,extraSlots=overLimit?Math.ceil((amount-limit)/unitSize):0;
-  const pct=Math.min(Math.round((amount/limit)*100),999);
+  const totalLimit=baseLimit+bonusLimit;
+  if(totalLimit===0){el.innerHTML=`<div class="viz-title">${catLabel} <span class="viz-sub" style="color:#A32D2D">— nikdo nemá povolení pro tuto kategorii</span></div>`;return;}
+  const overLimit=amount>totalLimit;
+  const baseSlots=Math.ceil(baseLimit/unitSize);
+  const bonusSlots=bonusLimit>0?Math.ceil(bonusLimit/unitSize):0;
+  const totalSlots=baseSlots+bonusSlots;
+  const filled=amount/unitSize;
+  const extraSlots=overLimit?Math.ceil((amount-totalLimit)/unitSize):0;
+  const pct=totalLimit>0?Math.min(Math.round((amount/totalLimit)*100),999):0;
   const tc=amount===0?'var(--text2)':overLimit?'#A32D2D':pct>85?'#BA7517':'#3B6D11';
-  const usedStr=amount>0?` · vezeš ${amount.toFixed(2)} l (${filled.toFixed(1)}×)`:'';
-  el.innerHTML=`<div class="viz-title" style="color:${tc}">${catLabel.split('(')[0].trim()} <span class="viz-sub">limit ${limit} l = ${totalSlots}× ${unitSize} l${usedStr}</span></div><div class="bottles-row" id="br-${cid}"></div>`;
+  const usedStr=amount>0?` · vezeš ${amount.toFixed(2)} l`:'';
+  const limitStr=bonusLimit>0?`${baseLimit}+${bonusLimit.toFixed(2)} l bonus`:`${baseLimit} l`;
+  el.innerHTML=`<div class="viz-title" style="color:${tc}">${catLabel} <span class="viz-sub">limit ${limitStr}${usedStr}</span></div><div class="bottles-row" id="br-${cid}"></div>`;
   const row=document.getElementById('br-'+cid);
   for(let i=0;i<totalSlots;i++){
-    const isFilled=i<Math.floor(filled),isPartial=!isFilled&&i<filled;
+    const isFilled=i<Math.floor(filled),isPartial=!isFilled&&i<filled,isBonus=i>=baseSlots;
     const div=document.createElement('div');div.className='bottle-item';
-    if(!isFilled&&!isPartial)div.style.opacity='0.28';else if(isPartial)div.style.opacity='0.55';
-    div.innerHTML=bottleSVG(type,isFilled?color:isPartial?color:'#888',unitSize)+`<span class="bottle-label">${unitSize} l</span>`;
+    if(!isFilled&&!isPartial)div.style.opacity='0.25';else if(isPartial)div.style.opacity='0.5';
+    const c=isFilled?color:isPartial?color:'#888';
+    const border=isBonus?`outline:2px dashed #3B6D11;outline-offset:2px;border-radius:3px;`:'';
+    div.innerHTML=`<div style="${border}">${bottleSVG(type,c,unitSize)}</div><span class="bottle-label"${isBonus?' style="color:#3B6D11"':''}>${unitSize} l${isBonus?'★':''}</span>`;
     row.appendChild(div);
+  }
+  if(bonusLimit>0&&baseSlots<row.children.length){
+    const line=document.createElement('div');line.className='bonus-line';line.innerHTML='<span class="bonus-tag">+bonus</span>';
+    row.insertBefore(line,row.children[baseSlots]);
   }
   if(overLimit){
     const line=document.createElement('div');line.className='limit-line';line.innerHTML='<span class="limit-tag">LIMIT</span>';row.appendChild(line);
     for(let i=0;i<extraSlots;i++){const div=document.createElement('div');div.className='bottle-item';div.innerHTML=bottleSVG(type,'#A32D2D',unitSize)+`<span class="bottle-label" style="color:#A32D2D">+clo</span>`;row.appendChild(div);}
   }
 }
+
 function recalc(){
-  const s=parseFloat(document.getElementById('q-spirits').value)||0;
-  const w=parseFloat(document.getElementById('q-wine').value)||0;
-  const b=parseFloat(document.getElementById('q-beer').value)||0;
+  const sIn=parseFloat(document.getElementById('q-spirits').value)||0;
+  const wIn=parseFloat(document.getElementById('q-wine').value)||0;
+  const bIn=parseFloat(document.getElementById('q-beer').value)||0;
   const n=persons.length;
   let lS=0,lW=0,lB=0;
   persons.forEach(p=>{const ag=getAgeGroup(p.age);if(ag.spirits)lS+=1;if(ag.wine)lW+=1.5;if(ag.beer)lB+=2;});
-  const spirits=mode==='person'?s*n:s,wine=mode==='person'?w*n:w,beer=mode==='person'?b*n:b;
-  renderBottles('viz-spirits','spirits',spirits,lS,'#534AB7',0.70,'🥃 Lihoviny 22–60%');
-  renderBottles('viz-wine','wine',wine,lW,'#993556',0.75,'🍷 Víno do 22%');
-  renderBottles('viz-beer','beer',beer,lB,'#854F0B',beerUnitSize,'🍺 Pivo do 4,7%');
+  const spirits=mode==='person'?sIn*n:sIn;
+  const wine=mode==='person'?wIn*n:wIn;
+  const beer=mode==='person'?bIn*n:bIn;
+  const unusedSpirits=Math.max(0,lS-spirits);
+  const unusedWine=Math.max(0,lW-wine);
+  const bonusWine=unusedSpirits*1.5;
+  const bonusBeer=unusedSpirits*1.5+unusedWine*1.0;
+  const effWine=lW+bonusWine;
+  const effBeer=lB+bonusBeer;
+  const swapEl=document.getElementById('swap-info');
+  const lines=[];
+  if(unusedSpirits>0&&lS>0)lines.push(`🥃 Nevyužito <strong>${unusedSpirits.toFixed(2)} l lihovin</strong> → bonus <strong>+${bonusWine.toFixed(2)} l vína</strong> nebo <strong>+${(unusedSpirits*1.5).toFixed(2)} l piva</strong>`);
+  if(unusedWine>0&&lW>0)lines.push(`🍷 Nevyužito <strong>${unusedWine.toFixed(2)} l vína</strong> → bonus <strong>+${(unusedWine).toFixed(2)} l piva</strong>`);
+  if(lines.length){swapEl.style.display='block';swapEl.innerHTML='Aktivní přepočty:<br>'+lines.join('<br>');}else{swapEl.style.display='none';}
+  renderBottles('viz-spirits','spirits',spirits,lS,0,'#534AB7',spiritUnitSize,'🥃 Lihoviny');
+  renderBottles('viz-wine','wine',wine,lW,bonusWine,'#993556',wineUnitSize,'🍷 Víno');
+  renderBottles('viz-beer','beer',beer,lB,bonusBeer,'#854F0B',beerUnitSize,'🍺 Pivo');
   const ageW=persons.filter(p=>p.age>0&&p.age<20).map(p=>p.age<18?`<strong>${p.name}</strong> (${p.age} let) — nesmí nic.`:`<strong>${p.name}</strong> (${p.age} let) — jen pivo a víno.`);
   const over=[];
   if(spirits>lS&&lS>0)over.push(`lihoviny o ${(spirits-lS).toFixed(1)} l`);
-  if(wine>lW&&lW>0)over.push(`víno o ${(wine-lW).toFixed(1)} l`);
-  if(beer>lB&&lB>0)over.push(`pivo o ${(beer-lB).toFixed(1)} l`);
+  if(wine>effWine&&effWine>0)over.push(`víno o ${(wine-effWine).toFixed(1)} l`);
+  if(beer>effBeer&&effBeer>0)over.push(`pivo o ${(beer-effBeer).toFixed(1)} l`);
   let html='';
   if(ageW.length)html+=`<div class="warn-note">⚠ Věkové omezení:<br>${ageW.join('<br>')}</div>`;
   if(spirits===0&&wine===0&&beer===0)html+=`<div style="font-size:12px;color:var(--text2);margin-top:8px;">← Zadej množství pro výpočet.</div>`;
   else if(over.length)html+=`<div class="err-note">✗ Limit překročen: ${over.join(', ')}.<br>Lahve za čárou LIMIT = nutné celní přiznání nebo snížení.</div>`;
-  else html+=`<div class="ok-note">✓ Vše v limitu — ${(spirits+wine+beer).toFixed(2)} l celkem, bezcelní dovoz v pořádku.</div>`;
+  else html+=`<div class="ok-note">✓ Vše v limitu — ${(spirits+wine+beer).toFixed(2)} l celkem. Bezcelní dovoz v pořádku.</div>`;
   document.getElementById('verdict').innerHTML=html;
 }
 renderPersons();recalc();
